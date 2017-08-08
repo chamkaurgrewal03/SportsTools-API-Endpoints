@@ -16,6 +16,10 @@ php artisan migrate
 # seed the database. seed data isn't available just yet, but will be added soon
 php artisan db:seed --class=UserTableSeeder
 php artisan db:seed --class=PersonTableSeeder
+php artisan db:seed --class=PersonAddressSeeder
+php artisan db:seed --class=PersonAddressesSeeder
+php artisan db:seed --class=PersonEmailsSeeder
+php artisan db:seed --class=PersonPhonesSeeder
 ```
 
 - Once the assets are published, run the command

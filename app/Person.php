@@ -23,4 +23,20 @@ class Person extends Model
     public function user() {
       return $this->belongsTo('App\User', 'id');
     }
+
+    //person address detail
+    public function address() {
+      return $this->belongsToMany('App\PersonAddress','person_addresses','person_id','address_id');
+    }
+
+    //person Emails data
+     public function emails() {
+      return $this->hasMany('App\PersonEmails');
+    }
+
+    //person Phones Data
+    public function phones() {
+      return $this->hasMany('App\PersonPhones');
+    }
+
 }

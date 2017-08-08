@@ -31,6 +31,13 @@ class UserController extends Controller
   public function getUserById($id){
     $user=User::find($id);
     $user->person;
+    $user->person->emails;
+    $user->person->phones;
+    $user->person->address;
+    $user->privilege; 
+    $user->roles; 
+    
+
     return $user;
       if($user){
         return Response::json(array(

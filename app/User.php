@@ -33,8 +33,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    // person table relation
     public function person(){
       return $this->hasOne('App\Person','user_id');
     }
+
+    //specific User Privileges detail
+    public function privilege() {
+      return $this->belongsToMany('App\Privileges','user_privileges','user_id','privilege_id');
+    }
+
+    //specific User Role detail
+    public function roles() {
+      return $this->belongsToMany('App\Roles','user_roles','user_id','role_id');
+    }
+
+
 }
